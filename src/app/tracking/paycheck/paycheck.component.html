@@ -1,0 +1,49 @@
+<div class="paycheckDiv">
+
+  <form (submit)="addDay()" [formGroup]="paycheckForm">
+
+    <input type="date" formControlName="date" id="date">
+
+    <input type="number" formControlName="rate">
+
+    <input type="number" formControlName="startHour">
+
+    <input type="number" formControlName="endHour">
+
+    <button type="submit" class="submitInput">ADD</button>
+
+  </form>
+
+</div>
+
+<div class="workdaysDiv">
+
+  <table id="paycheck-table">
+
+    <tr>
+      <th>Date</th>
+      <th>Rate</th>
+      <th>Start Hour</th>
+      <th>End Hour</th>
+      <th>Earned</th>
+    </tr>
+
+    <tr *ngFor="let day of entries; index as i">
+
+      <td>{{day.date.slice(0,10)}}</td>
+      <td>{{day.rate}}</td>
+      <td>{{day.startHour}}</td>
+      <td>{{day.endHour}}</td>
+      <td>{{day.money}}</td>
+
+    </tr>
+
+  </table>
+
+  <div class="lowerButtons" *ngIf="entries?.length !== 0">
+    <a>{{totalMoney}} HRK |</a>
+    <a (click)="exportPaycheckExcel()">Export to Excel</a>
+    <a (click)="resetTable()">Reset</a>
+  </div>
+
+</div>

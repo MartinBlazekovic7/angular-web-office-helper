@@ -1,0 +1,38 @@
+.main{
+  width: 80%;
+  margin: 50px auto;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.socialDiv{
+  display: flex;
+  width: 100%;
+}
+
+app-news{
+  width: 60%;
+  margin-right: 5%;
+  background-color: #E1E5EE;
+  border-radius: 20px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  min-height: 100vh;
+}
+
+app-weather{
+  width: 30%;
+  margin-left: 5%;
+  background-color: #E1E5EE;
+  border-radius: 20px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  min-height: 10vh;
+}
+
+.workplaceDiv{
+  width: 100%;
+  background-color: #E1E5EE;
+  border-radius: 20px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  margin-bottom: 50px;
+}

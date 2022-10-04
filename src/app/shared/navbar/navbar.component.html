@@ -1,0 +1,55 @@
+<div class="all">
+  <div class="user" *ngIf="authenticated">
+    <h4>{{userLogged.username}}</h4>
+    <h4 (click)="logout()">Logout</h4>
+  </div>
+
+  <ng-container *ngIf="authenticated">
+    <div class="navbar">
+      <div class="heading">
+        <h1>OFFICE HELPER</h1>
+      </div>
+      <div class="menu">
+
+        <ng-container *ngIf="selected == 'Tools'">
+          <a [routerLink]="['tools']" class="selected">Tools</a>
+        </ng-container>
+        <ng-container *ngIf="selected != 'Tools'">
+          <a (click)="selected = 'Tools'" [routerLink]="['tools']" class="unselected">Tools</a>
+        </ng-container>
+
+        <ng-container *ngIf="selected == 'Track'">
+          <a [routerLink]="['tracking']" class="selected">Track</a>
+        </ng-container>
+        <ng-container *ngIf="selected != 'Track'">
+          <a (click)="selected = 'Track'" [routerLink]="['tracking']" class="unselected">Track</a>
+        </ng-container>
+
+        <ng-container *ngIf="selected == 'Social'">
+          <a [routerLink]="['social']" class="selected">Social</a>
+        </ng-container>
+        <ng-container *ngIf="selected != 'Social'">
+          <a (click)="selected = 'Social'" [routerLink]="['social']" class="unselected">Social</a>
+        </ng-container>
+
+        <ng-container *ngIf="selected == 'Games'">
+          <a [routerLink]="['games']" class="selected">Games</a>
+        </ng-container>
+        <ng-container *ngIf="selected != 'Games'">
+          <a (click)="selected = 'Games'" [routerLink]="['games']" class="unselected">Games</a>
+        </ng-container>
+
+
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="!authenticated">
+    <h1 id="headerNotAuth">OFFICE HELPER</h1>
+  </ng-container>
+
+</div>
+
+
+
+

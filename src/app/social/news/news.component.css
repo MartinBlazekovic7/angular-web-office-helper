@@ -1,0 +1,61 @@
+.main{
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  margin: 10px 0;
+}
+
+h1 {
+  border-bottom: 1px solid #0A122A;
+  padding: 20px;
+}
+
+.articlesDiv{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.article{
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  padding: 10px;
+  transition: 0.2s;
+}
+
+.article:hover{
+  background-color: #dadce5;
+  border-radius: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #0A122A;
+}
+
+.article h3{
+  font-size: 24px;
+  text-align: left;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.text{
+  display: flex;
+  flex-direction: column;
+}
+.text p{
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.text p:nth-child(3){
+  font-size: 12px;
+}
+
+.link:hover{
+  text-decoration: underline;
+}

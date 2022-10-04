@@ -1,0 +1,43 @@
+
+<div class="todoBackground">
+
+  <div class="todoDiv">
+
+    <div class="todoDivHeading">
+      <h2>To do list</h2>
+
+      <div class="buttons">
+        <fa-icon [icon]="faCircle" size="2x" class="todoButton" (click)="showForm()"></fa-icon>
+        <fa-icon *ngIf="showDeleteButton" size="2x" [icon]="faTrash" class="todoButton2" (click)="removeTodos()"></fa-icon>
+      </div>
+
+    </div>
+
+    <div *ngIf="addingTodoFormVisible">
+      <form (submit)="addTodoFormSubmit()" [formGroup]="addTodoForm">
+        <input type="text" formControlName="text" maxlength="25">
+      </form>
+    </div>
+
+    <div *ngIf="!todos.length" class="emptyTodos">
+      <fa-icon [icon]="faList" size="10x"></fa-icon>
+    </div>
+    <div *ngIf="todos.length" class="todos">
+      <div *ngFor="let t of todos; index as i" class="todo">
+
+        <ng-container *ngIf="t.completed">
+          <input type="checkbox" (change)="completeThisTodo(i)" checked>
+        </ng-container>
+        <ng-container *ngIf="!t.completed">
+          <input type="checkbox" (change)="completeThisTodo(i)">
+        </ng-container>
+
+        <p>{{t.text}}</p>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+

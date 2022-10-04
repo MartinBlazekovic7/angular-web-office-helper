@@ -1,0 +1,290 @@
+.main{
+  background-color: #E1E5EE;
+  border-radius: 20px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  min-height: 50vh;
+  padding-top: 5px;
+  width: 90%;
+  margin: 50px auto;
+  font-family: 'Lato', sans-serif;
+}
+
+.main h1{
+  color: #2A324B;
+  width: 100%;
+  border-bottom: 1px solid #2A324B;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  font-size: 48px;
+}
+
+#datePicker, #timePicker{
+  background-color: #2A324B;
+  color: white;
+  font-size: 32px;
+  height: 50px;
+  font-family: 'Lato', sans-serif;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  cursor: pointer;
+  transition: 0.3s;
+  user-select: none;
+  text-align: center;
+  margin: 20px 0;
+  width: 300px;
+}
+#datePicker:hover{
+  background-color: #8c92ac;
+  color: #2A324B;
+}
+
+.newNoteDiv {
+  height: 500px;
+  width: 500px;
+  background: #FBFAF8;
+  border-radius: 10px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 0 0 99999px;
+  transition: 2s;
+}
+
+.newNoteDiv form {
+  width: 90%;
+  height: 80%;
+  margin: 10% 5%;
+}
+
+.newNoteForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.headingInput {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #0A122A;
+  transition: 0.2s;
+  height: 10%;
+  font-family: 'Lato', sans-serif;
+  padding: 5px;
+  font-size: 26px;
+}
+.headingInput:focus{
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #698F3F;
+}
+.headingInput:focus::placeholder{
+  color: transparent;
+}
+
+.noteInput{
+  height: 70%;
+  margin: 5% 0;
+  font-family: 'Lato', sans-serif;
+  background: transparent;
+  border-radius: 10px;
+  border: 2px solid #0A122A;
+  transition: 0.2s;
+  resize: none;
+  padding: 5px;
+  font-size: 26px;
+}
+.noteInput:focus{
+  outline: none;
+  border: 2px solid #698F3F;
+}
+.noteInput:focus::placeholder{
+  color: transparent;
+}
+.addCancel{
+  display: flex;
+  flex-direction: row;
+}
+.addCancel .submitInput {
+  width: 45%;
+  height: 30px;
+}
+.addCancel .submitInput:nth-child(1){
+  margin-right: 5%;
+}
+.addCancel .submitInput:nth-child(2){
+  margin-left: 5%;
+}
+.addCancel .submitInput:nth-child(2):hover{
+  background-color: indianred;
+  border: 1px solid indianred;
+}
+.submitInput{
+  background: #0A122A;
+  color: #e7decd;
+  cursor: pointer;
+  border: 1px solid #0A122A;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+.submitInput:hover{
+  background-color: #698F3F;
+  border: 1px solid #698F3F;
+}
+
+.datePick, .timePick {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 24px;
+  align-content: center;
+  align-items: center;
+}
+
+.calendarHeader{
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  margin: 20px auto;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  border-bottom: 1px solid #2A324B;
+  padding-bottom: 10px;
+}
+
+.addNewEventButton fa-icon{
+  cursor: pointer;
+  transition: 0.3s;
+}
+.addNewEventButton fa-icon:hover{
+  color: #437C90;
+}
+
+.event{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 10px auto;
+  height: 60px;
+  background-color: #2A324B;
+  color: white;
+  border-radius: 20px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  transition: 0.3s;
+}
+
+.dateTime{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content:center;
+  align-items: center;
+  width: 20%;
+
+}
+
+.titleDesc{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width:80%;
+}
+.titleDesc h3{
+  width: 30%;
+  border-left: 1px solid #f8cd6d;
+  border-right: 1px solid #f6d17d;
+  padding-left: 20px;
+}
+.deleteDiv {
+  width: 70%;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+#hide{
+  display: none;
+}
+.event:hover{
+  background-color: #366575;
+}
+.event:hover #hide{
+  display: flex;
+  cursor: pointer;
+  color: indianred;
+}
+
+.emptyCalendar{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  color: #8c92ac;
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 850px) {
+  .event{
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+  }
+  .dateTime{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content:center;
+    align-items: center;
+    width: 100%;
+
+  }
+  .titleDesc{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    width:100%;
+    height: 80px;
+  }
+  .titleDesc h3{
+    width: 50%;
+    border: none;
+  }
+  .deleteDiv {
+    width: 50%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+  .newNoteDiv {
+    height: 100vh;
+    width: 100vw;
+    border-radius: 10px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 2;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 0 0 99999px;
+    transition: 2s;
+  }
+}
+

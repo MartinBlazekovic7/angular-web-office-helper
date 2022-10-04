@@ -1,0 +1,75 @@
+main {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+}
+
+.loginDiv{
+  width: 50vh;
+  height: 50vh;
+  background-color: #E1E5EE;
+  border-radius: 20px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+a {
+  margin-top: 20px;
+  color: #2A324B;
+  cursor: pointer;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  height: 40%;
+}
+
+fieldset{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: none;
+  height: 40%;
+}
+
+fieldset input{
+  background: transparent;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #2A324B;
+  transition: 0.5s
+}
+
+button:disabled {
+  height: 20%;
+  transition: 0.3s;
+}
+
+button:enabled {
+  height: 20%;
+  cursor: pointer;
+  background-color: #2A324B;
+  color: #FBFAF8;
+  transition: 0.3s;
+}
+
+button:enabled:hover {
+  border: 1px solid #437C90;
+  background-color: #437C90;
+}
+

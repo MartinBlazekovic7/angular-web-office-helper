@@ -1,0 +1,117 @@
+.todoBackground{
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+  min-height: 50vh;
+  background-color: #E1E5EE;
+  border-radius: 20px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+
+.todoDiv{
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row-reverse;
+  width: 20%;
+  justify-content: space-between;
+}
+
+.todoButton, todoButton2{
+  background: transparent;
+  color: #2A324B;
+  cursor: pointer;
+  width: 10%;
+  transition: 0.2s;
+}
+
+.todoButton:hover{
+  color: #698F3F;
+}
+.todoButton2:hover{
+  color: indianred;
+}
+
+.todoDivHeading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #2A324B;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.todoDivHeading h2{
+  width: 80%;
+  font-size: 32px;
+}
+
+.todos{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.todo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 10px 0;
+}
+
+.todo input{
+  width: 20%;
+}
+
+.todo p {
+  width: 80%;
+  text-align: center;
+  border-bottom: 1px solid #0A122A;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #0A122A;
+  transition: 0.1s;
+}
+
+form input:focus{
+  outline: none;
+  border-bottom: 2px solid #698F3F;
+}
+
+form button {
+  width: 20%;
+}
+
+.emptyTodos{
+  color: #8c92ac;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding-top: 100px;
+  z-index: 1;
+}

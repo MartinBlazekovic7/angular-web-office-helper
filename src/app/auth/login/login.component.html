@@ -1,0 +1,18 @@
+<main>
+  <div class="loginDiv">
+    <form class="signin-form" (submit)="onLogin()" [formGroup]="signinForm">
+      <fieldset>
+        <label>Username:</label>
+        <input type="text" class="form-control" formControlName="username" placeholder="Username">
+      </fieldset>
+      <fieldset>
+        <label>Password:</label>
+        <input type="password" class="form-control" formControlName="password" placeholder="Password">
+      </fieldset>
+      <button type="submit" class="btn btn-primary" [disabled]="signinForm.invalid">Login</button>
+    </form>
+    <a (click)="navigate()">Don't have an account? Click to register</a>
+  </div>
+
+</main>
+

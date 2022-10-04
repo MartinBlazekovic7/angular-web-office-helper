@@ -1,0 +1,53 @@
+<div class="trackerDiv">
+  <div class="buttons">
+    <button *ngIf="!timerStarted" (click)="showEntryDiv = true" class="startStop">START</button>
+    <button *ngIf="timerStarted" (click)="stopTimer()"  class="startStop">STOP</button>
+  </div>
+
+
+  <div *ngIf="showEntryDiv" [@inOutAnimation] class="entryDiv">
+
+    <form (submit)="addNewEntry()" [formGroup]="entryForm">
+      <input type="text" formControlName="name" class="nameInput" placeholder="Title" maxlength="14">
+      <textarea type="text" formControlName="description" class="descInput" placeholder="Description" maxlength="24"></textarea>
+
+      <div class="cancelSubmit">
+        <input type="submit" class="submitInput">
+        <button (click)="this.showEntryDiv = false">Cancel</button>
+      </div>
+
+    </form>
+
+  </div>
+
+  <div class="entriesDiv">
+
+    <table id="timer-table">
+
+      <tr>
+        <th>Name</th>
+        <th>Desc</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Duration</th>
+      </tr>
+
+      <tr *ngFor="let entry of entries; index as i">
+
+        <td>{{entry.name}}</td>
+        <td>{{entry.description}}</td>
+        <td>{{entry.startTime.toString().slice(0,10)}} {{entry.startTime.toString().slice(11,19)}}</td>
+        <td>{{entry.endTime.toString().slice(0,10)}} {{entry.endTime.toString().slice(11,19)}}</td>
+        <td>{{entry.duration}}</td>
+
+      </tr>
+
+    </table>
+
+    <div *ngIf="entries.length" class="lowerButtons">
+      <a (click)="exportTrackerExcel()">Export to Excel</a>
+      <a (click)="resetTable()">Reset</a>
+    </div>
+
+  </div>
+</div>

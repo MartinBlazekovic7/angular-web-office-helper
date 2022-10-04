@@ -1,0 +1,64 @@
+<div class="notesDiv">
+  <div class="buttons">
+    <h2>Notes</h2>
+    <div class="addNewNoteButton">
+      <fa-icon [icon]="faNote" size="3x" (click)="showNewNoteDiv = !showNewNoteDiv; addOrEdit = false"></fa-icon>
+      <fa-icon [icon]="faEdit" size="3x" *ngIf="notes.length" (click)="editingNotes = !editingNotes"></fa-icon>
+    </div>
+  </div>
+
+
+  <div *ngIf="showNewNoteDiv" [@inOutAnimation] class="newNoteDiv">
+
+    <form *ngIf="!addOrEdit" (submit)="addNewNote()" [formGroup]="newNoteForm" class="newNoteForm">
+
+      <input type="text" formControlName="heading" name="heading" placeholder="Heading" class="headingInput" maxlength="14">
+
+      <textarea type="text" formControlName="text" name="text" placeholder="Your note" class="noteInput" maxlength="120"></textarea>
+
+      <div class="addCancel">
+        <input type="submit" class="submitInput" value="ADD">
+        <button class="submitInput" (click)="showNewNoteDiv = !showNewNoteDiv; addOrEdit = false">CANCEL</button>
+      </div>
+
+    </form>
+
+    <form *ngIf="addOrEdit" (submit)="editNote()" [formGroup]="editNoteForm" class="newNoteForm">
+
+      <input type="text" formControlName="heading" name="heading" placeholder="Heading" class="headingInput" maxlength="14">
+
+      <textarea type="text" formControlName="text" name="text" placeholder="Your note" class="noteInput" maxlength="120"></textarea>
+
+      <div class="addCancel">
+        <input type="submit" class="submitInput" value="EDIT">
+        <button class="submitInput" (click)="showNewNoteDiv = !showNewNoteDiv; addOrEdit = false">CANCEL</button>
+      </div>
+
+    </form>
+
+  </div>
+
+    <div class="notes">
+      <div class="emptyNote" *ngIf="!notes.length">
+        <fa-icon [icon]="faNote" size="10x" id="emptyNotes"></fa-icon>
+      </div>
+
+
+      <ng-container *ngIf="notes.length">
+        <div *ngFor="let note of notes; index as i" class="note">
+          <div class="noteHeader">
+            <h3>{{note.heading}}</h3>
+            <div class="btns">
+              <fa-icon [icon]="faEdit" *ngIf="editingNotes" (click)="editNoteDiv(note, i)"></fa-icon>
+              <fa-icon [icon]="faDelete" *ngIf="editingNotes" (click)="removeNote(note)"></fa-icon>
+            </div>
+          </div>
+          <p>{{note.text}}</p>
+        </div>
+      </ng-container>
+
+    </div>
+
+
+
+</div>

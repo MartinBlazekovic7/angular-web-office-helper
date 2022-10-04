@@ -1,0 +1,25 @@
+<div class="main">
+
+  <h1>Top Stories of Today - The New York Times</h1>
+
+  <div class="articlesDiv">
+    <div *ngFor="let article of articles.slice(4,14); index as i" class="hoverDiv">
+      <a href="{{article.short_url}}" target="_blank" class="article">
+        <img src="{{article.multimedia[2].url}}">
+        <div class="text">
+          <h3>{{article.title}}</h3>
+          <p>{{article.abstract}}</p>
+          <p>{{article.byline}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <a href="https://www.nytimes.com/" target="_blank" class="link">More articles on New York Times >></a>
+
+</div>
+
+
+
+
+

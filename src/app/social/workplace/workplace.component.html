@@ -1,0 +1,96 @@
+<div class="heading">
+  <h1>WORKPLACES</h1>
+</div>
+
+ <div class="main">
+
+   <div class="mainRight">
+
+     <div class="joinCreate">
+
+       <button (click)="showCreateFun()" class="joinCreateButtons">{{showCreateText}}</button>
+       <div *ngIf="showCreate" [@inOutAnimation] class="createWorkplaceDiv">
+         <input type="text" [(ngModel)]="userCreateName">
+         <button (click)="createWorkplace()">Create</button>
+       </div>
+
+       <button (click)="showJoinFun()" class="joinCreateButtons">{{showJoinText}}</button>
+       <div *ngIf="showJoin" [@inOutAnimation] class="joinWorkplaceDiv">
+         <input type="text" [(ngModel)]="userInputCode">
+         <button (click)="joinWorkplace()">Join</button>
+       </div>
+
+
+
+     </div>
+
+    <div *ngIf="workplaces.length" class="joinedWorkplacesList">
+
+      <h2>YOUR PLACES</h2>
+      <h3 *ngFor="let w of workplaces" (click)="chosenWorkplace = w; getWorkplaceUsers(w.idWorkplace); getWorkplacePosts(w.idWorkplace)">{{w.name}}</h3>
+    </div>
+
+    <div *ngIf="chosenWorkplace" class="joinedWorkplacesList">
+      <h2>USERS</h2>
+      <h3 *ngFor="let user of chosenWorkplaceUsers"> <fa-icon [icon]="faUser"></fa-icon> {{user.username}}</h3>
+    </div>
+
+     <!--<div *ngIf="chosenWorkplace" class="leaveButtonDiv">
+       <button class="leaveButton"(click)="leaveWorkplace()">LEAVE THIS WORKSPACE</button>
+     </div>-->
+
+  </div>
+
+  <div class="mainLeft">
+    <ng-container *ngIf="!workplaces.length">
+      <div class="empty">
+        <h1>You haven't joined any workplaces</h1>
+        <fa-icon [icon]="faPeople" size="10x"></fa-icon>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="workplaces">
+
+    <div *ngIf="chosenWorkplace" class="chosenWorkplace">
+
+      <div class="workplaceHeader">
+        <h1>{{chosenWorkplace.name}}</h1>
+        <p>Code: {{chosenWorkplace.code}}</p>
+      </div>
+
+      <div class="posts">
+
+        <div id="newPostButton">
+          <button (click)="showNewPostFun()" id="newPost">{{newPostText}}</button>
+        </div>
+
+        <div *ngIf="showNewPost" class="newPost">
+          <textarea type="text" [(ngModel)]="userInputPost" maxlength="120"></textarea>
+          <button (click)="addPost()">Publish</button>
+        </div>
+
+
+        <ng-container *ngIf="chosenWorkplacePosts.length == 0">
+          <h3 id="noPosts">There are no posts yet!</h3>
+        </ng-container>
+
+
+        <ng-container *ngIf="chosenWorkplacePosts.length">
+          <div *ngFor="let post of chosenWorkplacePosts.reverse()" class="postsList">
+            <p><fa-icon [icon]="faUserCircle"></fa-icon> {{post.username}}</p>
+            <p>{{post.timestamp}}</p>
+            <h3>{{post.text}}</h3>
+          </div>
+        </ng-container>
+      </div>
+
+
+    </div>
+
+    </ng-container>
+
+  </div>
+
+</div>
+
+

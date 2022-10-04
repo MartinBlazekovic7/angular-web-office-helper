@@ -1,0 +1,63 @@
+<body id="bodyID">
+<header>
+  <h1>Wordle</h1>
+</header>
+
+<p id="nepostoji">Not on word list!</p>
+
+<main id="container " #main>
+  <div *ngFor="let word of wordField; index as i;" class="parent">
+    <div *ngFor="let letters of word.word; index as i" class="child">
+      {{letters.letter}}
+    </div>
+  </div>
+
+</main>
+
+<section id="keyboard">
+  <div id="firstRow"><div *ngFor="let a of alphabet" (click)="insertLetter(a.letter)" class="letterKey">{{a.letter}}</div></div>
+  <div id="secondRow"><div *ngFor="let a of alphabet2" (click)="insertLetter(a.letter)" class="letterKey">{{a.letter}}</div></div>
+  <div id="thirdRow">
+    <div (click)="insertLetter('Enter')" class="letterKey enter">Enter</div>
+    <div *ngFor="let a of alphabet3" (click)="insertLetter(a.letter)" class="letterKey">{{a.letter}}</div>
+    <div (click)="insertLetter('Backspace') "class="letterKey enter">Del</div>
+  </div>
+
+</section>
+
+<footer>
+  <div id="result">
+    <div id="text">
+      <div class="stats">
+        <h3>{{playedTotal}}</h3>
+        <i>Played</i>
+      </div>
+      <div class="stats">
+        <h3>{{streak}}</h3>
+        <i>Streak</i>
+      </div>
+      <div class="stats">
+        <h3>{{highscore}}</h3>
+        <i>Best streak</i>
+      </div>
+      <div class="stats">
+        <h3>{{hours | number : '2.0-0'}}:{{minutes | number : '2.0-0'}}:{{seconds | number : '2.0-0'}}</h3>
+        <i class="timer">Next Wordle</i>
+      </div>
+      <div class="stats">
+        <h3>{{finalWord}}</h3>
+        <i class="timer">Today's word</i>
+      </div>
+      <div class="stats">
+        <button id="share" (click)="copyClipboard()">Share</button>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+
+</body>
+
+

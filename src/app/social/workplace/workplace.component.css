@@ -1,0 +1,245 @@
+.heading{
+  text-align: center;
+  margin: 10px 0;
+  padding: 10px;
+  border-bottom: 1px solid #0A122A;
+}
+.heading h1{
+  font-size: 56px;
+  color: #0A122A;
+  margin-bottom: 10px;
+}
+
+.main{
+  display: flex;
+  flex-direction: row-reverse;
+  height: 100vh;
+}
+.mainRight{
+  width: 35%;
+  min-height: 100%;
+}
+.mainLeft{
+  width: 65%;
+  height: 100%;
+  border-right: 1px solid #bcc2e0;
+}
+.joinedWorkplacesList{
+  width: 80%;
+  margin: 40px auto 0;
+  color: #0A122A;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.joinedWorkplacesList h2{
+  font-size: 32px;
+  text-align: center;
+  border-bottom: 1px solid #b0b8d3;
+  padding: 5px;
+
+}
+.joinedWorkplacesList h3{
+  text-align: center;
+  border-bottom: 1px solid #b0b8d3;
+  height: 30px;
+  font-size: 24px;
+  padding: 5px;
+  transition: 0.3s;
+}
+.joinedWorkplacesList h3:hover{
+  color: #F7C548;
+  cursor: pointer;
+}
+.chosenWorkplace {
+
+}
+fa-icon{
+  color: #b0b8d3;
+}
+.empty{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  height: 100%;
+}
+.empty h1{
+  color: #b0b8d3;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.joinCreate{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 20px 10%;
+  border-bottom: 1px solid #0A122A;
+}
+.joinCreateButtons{
+  margin: 10px 0;
+  height: 30px;
+  border: 1px solid #0A122A;
+  background-color: #0A122A;
+  color: #FBFAF8;
+  transition: 0.2s;
+  border-radius: 20px;
+}
+.joinCreateButtons:hover{
+  background-color: #437C90;
+  border: 1px solid #437C90;
+  cursor: pointer;
+}
+
+.createWorkplaceDiv, .joinWorkplaceDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.joinWorkplaceDiv{
+  margin-bottom: 20px;
+}
+.createWorkplaceDiv input, .joinWorkplaceDiv input{
+  width: 64%;
+  background: transparent;
+  outline: none;
+  border: 1px solid #0A122A;
+  height: 20px;
+  margin-right: 3%;
+}
+.createWorkplaceDiv button, .joinWorkplaceDiv button{
+  width: 30%;
+  height: 20px;
+  border: 1px solid #0A122A;
+  background-color: #0A122A;
+  color: #FBFAF8;
+  transition: 0.2s;
+  cursor: pointer;
+  margin-left: 3%;
+}
+.createWorkplaceDiv button:hover, .joinWorkplaceDiv button:hover {
+  background-color: #437C90;
+  border: 1px solid #437C90;
+}
+
+.workplaceHeader{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border-bottom: 1px solid #b0b8d3;
+}
+.workplaceHeader h1 {
+  font-size: 42px;
+}
+
+.posts{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.postsList{
+  margin-top: 20px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 20px;
+}
+
+.postsList fa-icon{
+  color: #0A122A;
+}
+
+.postsList p:nth-child(2){
+  font-size: 12px;
+  color: #2A324B;
+}
+#noPosts{
+  color: #b0b8d3;
+  text-align: center;
+  padding-top: 200px;
+}
+
+.newPost{
+  display: flex;
+  width: 100%;
+  margin: 20px 0;
+}
+.newPost textarea{
+  width: 70%;
+  resize: none;
+  height: 50px;
+  background: transparent;
+  border: 1px solid #0A122A;
+  border-radius: 20px 0 0 20px;
+  padding: 5px;
+  transition: 0.3s;
+}
+.newPost textarea:focus{
+  outline: none;
+  background: transparent;
+}
+.newPost button{
+  width: 30%;
+  border: 1px solid #0A122A;
+  background-color: #0A122A;
+  cursor: pointer;
+  color: white;
+  border-radius: 0 20px 20px 0;
+  transition: 0.3s;
+}
+.newPost button:hover{
+  border: 1px solid #437C90;
+  background-color: #437C90;
+}
+
+#newPost{
+  border: 1px solid #0A122A;
+  background-color: #0A122A;
+  color: white;
+  width: 30%;
+  padding: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#newPost:hover{
+  border: 1px solid #437C90;
+  background-color: #437C90;
+}
+#newPostButton{
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+.leaveButtonDiv{
+  display: flex;
+  justify-content: center;
+  align-content:center;
+  align-items: center;
+  margin-top: 50px;
+}
+.leaveButton {
+  border: 1px solid #0A122A;
+  background-color: #0A122A;
+  color: #FBFAF8;
+  transition: 0.2s;
+  border-radius: 20px;
+  width: 60%;
+  margin: 0 auto;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.leaveButton:hover{
+  border: 1px solid indianred;
+  background-color: indianred;
+}
+

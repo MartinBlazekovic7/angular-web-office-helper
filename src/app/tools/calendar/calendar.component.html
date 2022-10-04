@@ -1,0 +1,62 @@
+<div class="main">
+  <h1>Calendar</h1>
+
+  <div class="calendarHeader">
+    <h2>MY EVENTS</h2>
+    <div class="addNewEventButton">
+      <fa-icon [icon]="faPlus" size="3x" (click)="showNewEventDiv = !showNewEventDiv"></fa-icon>
+    </div>
+  </div>
+
+
+  <div *ngIf="showNewEventDiv" [@inOutAnimation] class="newNoteDiv">
+
+    <form (submit)="addNewEvent()" [formGroup]="newEventForm" class="newNoteForm">
+
+      <input type="text" formControlName="heading" name="heading" placeholder="Title" class="headingInput" maxlength="14">
+      <textarea type="text" formControlName="text" name="text" placeholder="Description" class="noteInput" maxlength="40"></textarea>
+
+      <div class="datePick">
+        <label for="datePicker">Day</label>
+        <input type="date" formControlName="date" id="datePicker">
+      </div>
+      <div class="timePick">
+        <label for="timePicker">Time</label>
+        <input type="time" formControlName="time" id="timePicker">
+      </div>
+
+
+      <div class="addCancel">
+        <input type="submit" class="submitInput" value="ADD">
+        <button class="submitInput" (click)="showHide()">CANCEL</button>
+      </div>
+
+    </form>
+
+  </div>
+
+  <div *ngIf="!myEvents.length" class="emptyCalendar">
+    <fa-icon [icon]="faCalendar" size="10x"></fa-icon>
+  </div>
+
+
+  <ng-container *ngIf="myEvents.length">
+    <div *ngFor="let event of myEvents; index as i" class="event" (click)="openEvent()">
+
+      <div class="dateTime">
+        <h3>{{event.date}}</h3>
+        <p>{{event.time}}</p>
+      </div>
+
+      <div class="titleDesc">
+        <h3>{{event.title}}</h3>
+        <div class="deleteDiv">
+          <p>{{event.description}}</p>
+          <fa-icon [@inOutAnimation] [icon]="faTrash" size="2x" id="hide" (click)="deleteEvent(i)"></fa-icon>
+        </div>
+      </div>
+
+    </div>
+  </ng-container>
+
+</div>

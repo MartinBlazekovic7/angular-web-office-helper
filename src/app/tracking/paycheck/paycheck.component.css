@@ -1,0 +1,69 @@
+.paycheckDiv{
+  width: 100%;
+}
+
+
+.paycheckDiv form{
+  width: 100%;
+  margin: 0 auto 50px 10px;
+}
+
+.paycheckDiv form input{
+  width: 20%;
+  height: 20px;
+  font-size: 18px;
+  background: transparent;
+  outline: none;
+  border: 1px solid #2A324B;
+  text-align: center;
+  border-radius: 5px;
+}
+.paycheckDiv form input:focus{
+  border:1px solid #698F3F;
+}
+.submitInput{
+  background-color: #2A324B;
+  color: white;
+  transition: 0.3s;
+  width: 20%;
+  cursor: pointer;
+  height: 20px;
+  border-radius: 5px;
+}
+.submitInput:hover{
+  background-color: #437C90;
+  border: 1px solid #437C90;
+}
+#date{
+  width: 17.6%;
+}
+
+table {
+  width: 100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  width: 20%;
+  text-align: center;
+  height: 30px;
+}
+
+th{
+  color: white;
+  background-color: #2A324B;
+}
+
+.lowerButtons{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.lowerButtons a{
+  margin: 10px 10px;
+}
+.lowerButtons a:hover{
+  text-decoration: underline;
+}

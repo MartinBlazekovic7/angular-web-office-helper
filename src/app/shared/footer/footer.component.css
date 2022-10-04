@@ -1,0 +1,20 @@
+.footer{
+  width: 100%;
+  background-image: linear-gradient(45deg, #39474b 0%, #495459 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  color: #FBFAF8;
+  height: 10vh;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .footer{
+    height: auto;
+    padding: 10px 0;
+  }
+}

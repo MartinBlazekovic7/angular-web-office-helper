@@ -1,0 +1,79 @@
+.trackingDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  margin: 50px 0;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+
+}
+
+.timerDiv, .paycheckDiv{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background-color: #E1E5EE;
+  width: 90%;
+  border-radius: 20px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  padding: 20px;
+  min-height: 40vh;
+}
+
+.timerDesc, .paycheckDesc{
+  width: 40%;
+  margin-right: 5%;
+}
+.timerDesc h2, .paycheckDesc h2 {
+  font-size: 48px;
+  color: #437C90;
+}
+
+.timerDesc ul, .paycheckDesc ul {
+  list-style: none;
+}
+
+.timerDesc ul li, .paycheckDesc ul li {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+app-timer, app-paycheck {
+  width: 40%;
+  margin-left: 5%;
+}
+
+.paycheckDiv{
+  margin-top: 5%;
+}
+
+.paycheckDesc{
+  text-align: right;
+}
+
+@media screen and (max-width: 1200px) {
+  .timerDiv, .paycheckDiv{
+    display: flex;
+    flex-direction: column;
+    min-height: 40vh;
+  }
+  .paycheckDiv {
+    flex-direction: column-reverse;
+  }
+  .timerDesc, .paycheckDesc{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  app-timer{
+    width: 80%;
+    margin: 0;
+  }
+  app-paycheck{
+    width: 80%;
+    margin: 0 auto;
+  }
+}

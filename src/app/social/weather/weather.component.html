@@ -1,0 +1,54 @@
+<div class="main">
+
+  <div class="search" *ngIf="!selectedLocation">
+    <input type="text" placeholder="Type your city here" [(ngModel)]="searchTerm">
+    <button (click)="getLocation()">Search</button>
+  </div>
+
+  <div *ngIf="selectedLocation" class="header">
+    <h2>{{selectedLocation.EnglishName}}</h2>
+    <p (click)="selectedLocation=null; forecast=null; this.searching = false">Change</p>
+  </div>
+
+  <div *ngIf="searching===false" class="searching">
+    <fa-icon [icon]="faCloud" size="10x"></fa-icon>
+  </div>
+
+  <ng-container *ngIf="!selectedLocation">
+  <div *ngIf="locations">
+    <div *ngFor="let l of locations" class="searchResults">
+      <a (click)="getForecast(l.Key); selectedLocation = l">{{l.EnglishName}}, {{l.Country.EnglishName}}</a>
+    </div>
+  </div>
+  </ng-container>
+
+  <div *ngIf="forecast">
+    <div *ngFor="let df of forecast.DailyForecasts" class="forecast">
+      <div class="date">
+        <h3>{{df.Date.slice(0,10)}}</h3>
+      </div>
+      <div class="dayNight">
+
+        <div class="day">
+          <h3>Day</h3>
+          <img src="assets/WeatherIcons/{{df.Day.Icon}}.png">
+          <p>{{df.Day.IconPhrase}}</p>
+        </div>
+
+        <div class="night">
+          <h3>Night</h3>
+          <img src="assets/WeatherIcons/{{df.Night.Icon}}.png">
+          <p>{{df.Night.IconPhrase}}</p>
+        </div>
+
+      </div>
+
+      <div class="maxMin">
+        <h4>Maximum {{((df.Temperature.Maximum.Value - 32)/1.8000).toFixed()}} C</h4>
+        <h4>Minimum {{((df.Temperature.Minimum.Value - 32)/1.8000).toFixed()}} C</h4>
+      </div>
+
+    </div>
+  </div>
+
+</div>
